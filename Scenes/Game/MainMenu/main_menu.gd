@@ -125,3 +125,8 @@ func _on_vsync_toggled(toggled_on: bool) -> void:
 	else:
 		SaveLoad.settings_save.Vsync = toggled_on
 		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED)
+
+
+func _on_new_game_pressed() -> void:
+	$CloseMainMenu.visible = true
+	$CloseMainMenu/AnimationPlayer.play("closez")
