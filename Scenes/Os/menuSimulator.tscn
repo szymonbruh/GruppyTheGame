@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=3 uid="uid://bbkyo5ox3eh0c"]
+
+[ext_resource type="Script" uid="uid://c4cpirds4bti7" path="res://Scenes/Os/menu_simulator.gd" id="1_j1xh7"]
+[ext_resource type="FontFile" uid="uid://claty8icuelp2" path="res://Fonts/ModernDOS8x8.ttf" id="1_v32qh"]
+[ext_resource type="Shader" uid="uid://do5y8lj8gh15h" path="res://Scenes/Os/vhs_effect.gdshader" id="3_1myh0"]
+[ext_resource type="AudioStream" uid="uid://f65xo2tu70c0" path="res://Sounds/old-computer_70bpm.wav" id="4_a7510"]
+[ext_resource type="AudioStream" uid="uid://bu4s0h3frrrau" path="res://Sounds/beep.wav" id="5_0h0ku"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j1xh7"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a7510"]
+shader = ExtResource("3_1myh0")
+shader_parameter/crt_curve = 0.015
+shader_parameter/crt_scan_line_color = 0.12
+shader_parameter/aperture_grille_rate = 0.73
+shader_parameter/aparture_grille_cut_rate = 1.0
+shader_parameter/rf_switch_esque_blur = 0.75
+shader_parameter/white_noise_rate = 0.187
+
+[node name="MenuSimulator" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j1xh7")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = -6.0
+offset_top = -2.0
+offset_right = 322.0
+offset_bottom = 184.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_j1xh7")
+
+[node name="NapisOgolny" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 318.0
+offset_bottom = 112.0
+theme_override_fonts/normal_font = ExtResource("1_v32qh")
+theme_override_fonts/mono_font = ExtResource("1_v32qh")
+theme_override_fonts/italics_font = ExtResource("1_v32qh")
+theme_override_fonts/bold_italics_font = ExtResource("1_v32qh")
+theme_override_fonts/bold_font = ExtResource("1_v32qh")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_a7510")
+layout_mode = 0
+offset_right = 321.0
+offset_bottom = 181.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_a7510")
+volume_db = -7.478
+autoplay = true
+
+[node name="BEep" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_0h0ku")
+pitch_scale = 0.36
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]

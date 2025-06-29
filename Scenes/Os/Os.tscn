@@ -1,0 +1,146 @@
+[gd_scene load_steps=5 format=3 uid="uid://cefwy2vwr6yx2"]
+
+[ext_resource type="FontFile" uid="uid://claty8icuelp2" path="res://Fonts/ModernDOS8x8.ttf" id="1_5dpkl"]
+
+[sub_resource type="GDScript" id="GDScript_5dpkl"]
+script/source = "extends Control
+
+
+var GruppyOS = 0
+func _input(event):
+	if event.is_action_pressed(\"ui_accept\"):  # Domyślnie przypisany Enter
+		if GruppyOS == 23:
+			get_tree().change_scene_to_file(\"res://Scenes/Os/Loading.tscn\")
+
+func _on_line_edit_text_changed(new_text: String) -> void:
+	GruppyOS += 1
+	if GruppyOS == 0:
+		$LineEdit.text = \"\";
+	if GruppyOS == 1:
+		$LineEdit.text = \"r\";
+	if GruppyOS == 2:
+		$LineEdit.text = \"ru\";
+	if GruppyOS == 3:
+		$LineEdit.text = \"run\";
+	if GruppyOS == 4:
+		$LineEdit.text = \"run \";
+	if GruppyOS == 5:
+		$LineEdit.text = \"run G\";
+	if GruppyOS == 6:
+		$LineEdit.text = \"run Gr\";
+	if GruppyOS == 7:
+		$LineEdit.text = \"run Gru\";
+	if GruppyOS == 8:
+		$LineEdit.text = \"run Grup\";
+	if GruppyOS == 9:
+		$LineEdit.text = \"run Grupp\";
+	if GruppyOS == 10:
+		$LineEdit.text = \"run Gruppy\";
+	if GruppyOS == 11:
+		$LineEdit.text = \"run Gruppy:\";
+	if GruppyOS == 12:
+		$LineEdit.text = \"run Gruppy:T\";
+	if GruppyOS == 13:
+		$LineEdit.text = \"run Gruppy:Th\";
+	if GruppyOS == 14:
+		$LineEdit.text = \"run Gruppy:The\";
+	if GruppyOS == 15:
+		$LineEdit.text = \"run Gruppy:The G\";
+	if GruppyOS == 16:
+		$LineEdit.text = \"run Gruppy:The Ga\";
+	if GruppyOS == 17:
+		$LineEdit.text = \"run Gruppy:The Gam\";
+	if GruppyOS == 18:
+		$LineEdit.text = \"run Gruppy:The Game\";
+	if GruppyOS == 19:
+		$LineEdit.text = \"run Gruppy:The Game.\";
+	if GruppyOS == 20:
+		$LineEdit.text = \"run Gruppy:The Game.e\";
+	if GruppyOS == 21:
+		$LineEdit.text = \"run Gruppy:The Game.ex\";
+	if GruppyOS == 22:
+		$LineEdit.text = \"run Gruppy:The Game.exe\";
+	if GruppyOS == 23:
+		$LineEdit.text = \"run Gruppy:The Game.exe\";
+		$LineEdit.editable = false
+		$LineEdit.add_theme_color_override(\"font_color\", Color.WHITE)
+		$LineEdit.add_theme_color_override(\"background_color\", Color.BLACK)
+	if GruppyOS == 24:
+		get_tree().change_scene_to_file(\"res://Scenes/Os/Loading.tscn\")
+		print(\"Sraka\")
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5cw3a"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yo0f1"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="GruppyOs" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_5dpkl")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 0
+offset_left = -44.0
+offset_top = -54.0
+offset_right = 353.0
+offset_bottom = 222.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5cw3a")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 37.0
+offset_right = 1936.0
+offset_bottom = 578.0
+theme_override_fonts/normal_font = ExtResource("1_5dpkl")
+theme_override_fonts/mono_font = ExtResource("1_5dpkl")
+theme_override_fonts/italics_font = ExtResource("1_5dpkl")
+theme_override_fonts/bold_italics_font = ExtResource("1_5dpkl")
+theme_override_fonts/bold_font = ExtResource("1_5dpkl")
+theme_override_font_sizes/bold_italics_font_size = 5
+theme_override_font_sizes/italics_font_size = 5
+theme_override_font_sizes/mono_font_size = 5
+theme_override_font_sizes/normal_font_size = 5
+theme_override_font_sizes/bold_font_size = 78
+text = "Current date is: 01:12:2003
+
+
+
+
+The UCM Personal Computer
+
+GruppyOS Version 1.2 1990, 1991, 1992
+
+
+Welcome %USER_####%, 
+what is your next operation?"
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 670.0
+offset_right = 1692.0
+offset_bottom = 718.0
+theme_override_fonts/font = ExtResource("1_5dpkl")
+theme_override_font_sizes/font_size = 78
+theme_override_styles/focus = SubResource("StyleBoxFlat_yo0f1")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_yo0f1")
+theme_override_styles/normal = SubResource("StyleBoxFlat_yo0f1")
+placeholder_text = "|"
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[connection signal="text_changed" from="LineEdit" to="." method="_on_line_edit_text_changed"]

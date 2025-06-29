@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=3 uid="uid://bod23amgyrkmc"]
+
+[ext_resource type="Script" uid="uid://6xe6pp07483d" path="res://Scenes/Os/loading.gd" id="1_4hnrw"]
+[ext_resource type="Shader" uid="uid://do5y8lj8gh15h" path="res://Scenes/Os/vhs_effect.gdshader" id="1_8n3k6"]
+[ext_resource type="AudioStream" uid="uid://f65xo2tu70c0" path="res://Sounds/old-computer_70bpm.wav" id="2_4hnrw"]
+[ext_resource type="FontFile" uid="uid://claty8icuelp2" path="res://Fonts/ModernDOS8x8.ttf" id="4_volwq"]
+[ext_resource type="Texture2D" uid="uid://cg5ydaaugs60l" path="res://Sprites/OS/Gruppy.png" id="5_2ixlx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vt3b"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_volwq"]
+shader = ExtResource("1_8n3k6")
+shader_parameter/crt_curve = 0.015
+shader_parameter/crt_scan_line_color = 0.12
+shader_parameter/aperture_grille_rate = 0.73
+shader_parameter/aparture_grille_cut_rate = 1.0
+shader_parameter/rf_switch_esque_blur = 0.75
+shader_parameter/white_noise_rate = 0.187
+
+[node name="Loading" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4hnrw")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = -6.0
+offset_top = -2.0
+offset_right = 322.0
+offset_bottom = 184.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_7vt3b")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_4hnrw")
+volume_db = -7.478
+autoplay = true
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -126.0
+offset_top = -60.0
+offset_right = 126.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("4_volwq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(159, 102)
+texture = ExtResource("5_2ixlx")
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_volwq")
+layout_mode = 0
+offset_right = 321.0
+offset_bottom = 181.0
+
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]
