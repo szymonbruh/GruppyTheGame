@@ -26,6 +26,10 @@ func _ready():
 		$VBoxContainer2/ResolutionOption.selected = 4
 	$VolumesContainer/MasterVolumeSlider.value = SaveLoad.settings_save.MasterVolume
 	$VolumesContainer/EffectsVolumeSlider.value = SaveLoad.settings_save.EfVolume
+	if SaveLoad.settings_save.Vsync == false:
+		$VBoxContainer2/Vsync.button_pressed = false
+	else:
+		$VBoxContainer2/Vsync.button_pressed = true
 func _on_quit_pressed() -> void:
 	get_tree().quit()
 
@@ -112,3 +116,12 @@ func _on_save_and_quit_volume_pressed() -> void:
 	$SaveAndQuitVolume.visible = false
 	$HBoxContainer.visible = true
 	$VolumesContainer.visible = false
+
+
+func _on_vsync_toggled(toggled_on: bool) -> void:
+	if toggled_on == false:
+		SaveLoad.settings_save.Vsync = toggled_on
+		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
+	else:
+		SaveLoad.settings_save.Vsync = toggled_on
+		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED)

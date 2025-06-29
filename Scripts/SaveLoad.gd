@@ -1,13 +1,14 @@
 extends Node
 
-const settings_loc = "user://SettingsFile4.json"
+const settings_loc = "user://SettingsFile5.json"
 
 var settings_save: Dictionary = {
 	"Fullscreen" : false,
 	"FirstLaunch" : false,
 	"Resolution" : [1280,720],
 	"MasterVolume" : 0,
-	"EfVolume" : 0
+	"EfVolume" : 0,
+	"Vsync" : false
 }
 func _ready():
 	if not FileAccess.file_exists(settings_loc):
@@ -32,6 +33,10 @@ func _loadset():
 			var res = settings_save["Resolution"]
 			if res.size() == 2:
 				DisplayServer.window_set_size(Vector2i(res[0], res[1]))
+		if settings_save.Vsync == true:
+			DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED)
+		else:
+			DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
 	else:
 		print("brak pliku")
 

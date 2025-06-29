@@ -498,7 +498,7 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -81.0
-offset_top = 46.0
+offset_top = 47.0
 offset_right = 82.0
 offset_bottom = 77.0
 grow_horizontal = 2
@@ -532,9 +532,14 @@ offset_bottom = 144.0
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_jp82l")
 text = "Fullscreen"
-alignment = 1
 icon_alignment = 2
 metadata/_edit_lock_ = true
+
+[node name="Vsync" type="CheckBox" parent="VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_jp82l")
+text = "VSync
+"
 
 [node name="ResolutionLabel" type="RichTextLabel" parent="VBoxContainer2"]
 layout_mode = 2
@@ -671,6 +676,7 @@ metadata/_edit_lock_ = true
 [connection signal="pressed" from="HBoxContainer/SaveButton" to="." method="_on_save_button_pressed"]
 [connection signal="pressed" from="VBoxContainer2/FullScreen" to="." method="_on_full_screen_pressed"]
 [connection signal="toggled" from="VBoxContainer2/FullScreen" to="." method="_on_full_screen_toggled"]
+[connection signal="toggled" from="VBoxContainer2/Vsync" to="." method="_on_vsync_toggled"]
 [connection signal="item_selected" from="VBoxContainer2/ResolutionOption" to="." method="_on_resolution_option_item_selected"]
 [connection signal="pressed" from="VBoxContainer2/Button" to="." method="_on_button_pressed"]
 [connection signal="changed" from="VolumesContainer/MasterVolumeSlider" to="." method="_on_master_volume_slider_changed"]
