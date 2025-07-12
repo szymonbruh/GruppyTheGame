@@ -1,0 +1,31 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(0.443359, 0.443359, 0.443359, 1),
+&"custom_info": {
+"prefix": "",
+"sound_mood_default": "",
+"sound_moods": {},
+"style": "",
+"suffix": ""
+},
+&"default_portrait": "main",
+&"description": "a little mouse",
+&"display_name": "Shy mouse",
+&"mirror": false,
+&"nicknames": ["Shy Mouse"],
+&"offset": Vector2(0, -50),
+&"portraits": {
+"main": {
+"export_overrides": {
+"image": "\"res://Sprites/OS/mouse_default.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+&"scale": 0.7
+}

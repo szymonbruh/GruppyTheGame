@@ -16,8 +16,6 @@ func _ready():
 	else:
 		_loadset()
 
-	
-	
 func _loadset():
 	if FileAccess.file_exists(settings_loc):
 		var file = FileAccess.open(settings_loc, FileAccess.READ)

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://blr8ysfghsfbr"]
+
+[ext_resource type="FontFile" uid="uid://claty8icuelp2" path="res://Fonts/ModernDOS8x8.ttf" id="1_pkrld"]
+[ext_resource type="Script" uid="uid://d2xjeoyr0u2r2" path="res://Scenes/Game/MainGame/UI/show_info.gd" id="2_8xspm"]
+
+[node name="ShowInfo" type="Label"]
+offset_left = 145.0
+offset_top = 164.0
+offset_right = 313.0
+offset_bottom = 172.0
+theme_override_fonts/font = ExtResource("1_pkrld")
+text = "Click \"E\" to interact"
+script = ExtResource("2_8xspm")

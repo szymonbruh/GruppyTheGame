@@ -1,0 +1,16 @@
+join mouse center
+mouse: oh... hi
+- What's your name?
+	My name?
+	Oh... My name is Shy Mouse
+	Nice to meet you..
+	jump 
+- What are you doing here?
+	Me? Um
+	I'm live there...
+	You didn't notice?
+	I'm here for long time..
+	jump 
+- Exit
+	That's all? Okay....
+	[signal arg="exit_dialog"]

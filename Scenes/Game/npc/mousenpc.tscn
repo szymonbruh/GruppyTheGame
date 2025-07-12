@@ -1,0 +1,153 @@
+[gd_scene load_steps=20 format=3 uid="uid://t2r6ixepci8b"]
+
+[ext_resource type="Script" uid="uid://b7u2a5pn8p7je" path="res://Scenes/Game/npc/mousenpc.gd" id="1_l48ak"]
+[ext_resource type="Texture2D" uid="uid://ddwej83t4heql" path="res://Dialogs/timelines/mousedefault.png" id="2_u1csk"]
+[ext_resource type="Texture2D" uid="uid://cmpl7yn0ofgpy" path="res://Sprites/OS/mouseanimation.png" id="3_6u0wo"]
+[ext_resource type="Script" uid="uid://ceplfahxypvdl" path="res://Scenes/Game/npc/chatdetector.gd" id="4_u1csk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ta11"]
+atlas = ExtResource("3_6u0wo")
+region = Rect2(0, 36, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8bpcr"]
+atlas = ExtResource("3_6u0wo")
+region = Rect2(12, 36, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvupw"]
+atlas = ExtResource("3_6u0wo")
+region = Rect2(24, 36, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e186x"]
+atlas = ExtResource("3_6u0wo")
+region = Rect2(0, 12, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_trcd7"]
+atlas = ExtResource("3_6u0wo")
+region = Rect2(12, 12, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bxqhg"]
+atlas = ExtResource("3_6u0wo")
+region = Rect2(24, 12, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s0yng"]
+atlas = ExtResource("3_6u0wo")
+region = Rect2(0, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vlxo4"]
+atlas = ExtResource("3_6u0wo")
+region = Rect2(12, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a7yre"]
+atlas = ExtResource("3_6u0wo")
+region = Rect2(24, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0cuox"]
+atlas = ExtResource("3_6u0wo")
+region = Rect2(0, 24, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0gxj"]
+atlas = ExtResource("3_6u0wo")
+region = Rect2(12, 24, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbbfh"]
+atlas = ExtResource("3_6u0wo")
+region = Rect2(24, 24, 12, 12)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s6ltj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_u1csk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ta11")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8bpcr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvupw")
+}],
+"loop": true,
+"name": &"godown",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e186x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_trcd7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bxqhg")
+}],
+"loop": true,
+"name": &"goleft",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s0yng")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vlxo4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a7yre")
+}],
+"loop": true,
+"name": &"goright",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0cuox")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g0gxj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mbbfh")
+}],
+"loop": true,
+"name": &"goup",
+"speed": 3.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7s0s3"]
+radius = 19.0263
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h0rti"]
+radius = 7.0
+
+[node name="Mousenpc" type="CharacterBody2D"]
+script = ExtResource("1_l48ak")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_s6ltj")
+frame_progress = 0.328786
+
+[node name="chatdetector" type="Area2D" parent="." groups=["interaction"]]
+collision_layer = 2
+collision_mask = 2
+collision_priority = 2.0
+script = ExtResource("4_u1csk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chatdetector"]
+shape = SubResource("CircleShape2D_7s0s3")
+
+[node name="hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_h0rti")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.095
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

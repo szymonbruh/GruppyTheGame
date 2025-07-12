@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://yn0xol78boi"]
+[gd_scene load_steps=40 format=3 uid="uid://yn0xol78boi"]
 
 [ext_resource type="FontFile" uid="uid://5uqvq032xj5o" path="res://Fonts/SuperPixel-m2L8j.ttf" id="1_jp82l"]
 [ext_resource type="Shader" uid="uid://do5y8lj8gh15h" path="res://Scenes/Os/vhs_effect.gdshader" id="1_lk1ll"]
@@ -336,6 +336,45 @@ corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 
+[sub_resource type="Animation" id="Animation_aytrs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(127, 17)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-19, -62)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_ldcc4"]
 resource_name = "closez"
 length = 0.45
@@ -376,7 +415,141 @@ tracks/2/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_aytrs"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qhlkt"]
+_data = {
+&"RESET": SubResource("Animation_aytrs"),
+&"closez": SubResource("Animation_ldcc4")
+}
+
+[sub_resource type="Animation" id="Animation_qhlkt"]
+resource_name = "Close"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.399261),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(129, 20), Vector2(325, 186)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.399261),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(95, 93), Vector2(-4, -3)]
+}
+
+[sub_resource type="Animation" id="Animation_8ueq6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(129, 20)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(95, 93)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s7j2c"]
+_data = {
+&"Close": SubResource("Animation_qhlkt"),
+&"RESET": SubResource("Animation_8ueq6")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ugi8i"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_s7j2c"]
+resource_name = "Close"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(126, 18), Vector2(339, 192)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(97, 137), Vector2(-10, -4)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ri03x"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -388,7 +561,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(127, 17)]
+"values": [Vector2(126, 18)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -400,7 +573,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-19, -62)]
+"values": [Vector2(97, 137)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -415,14 +588,11 @@ tracks/2/keys = {
 "values": [Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_qhlkt"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8pcie"]
 _data = {
-&"RESET": SubResource("Animation_aytrs"),
-&"closez": SubResource("Animation_ldcc4")
+&"Close": SubResource("Animation_s7j2c"),
+&"RESET": SubResource("Animation_ri03x")
 }
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ugi8i"]
-bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w0g5m"]
 shader = ExtResource("1_lk1ll")
@@ -522,6 +692,7 @@ grow_vertical = 2
 
 [node name="NewGame" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+focus_mode = 1
 theme_override_fonts/font = ExtResource("1_jp82l")
 theme_override_font_sizes/font_size = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_w0g5m")
@@ -535,6 +706,7 @@ libraries = {
 
 [node name="Continue" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+focus_mode = 1
 theme_override_fonts/font = ExtResource("1_jp82l")
 theme_override_styles/normal = SubResource("StyleBoxFlat_w0g5m")
 text = "Continue"
@@ -546,6 +718,7 @@ libraries = {
 
 [node name="Settings" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+focus_mode = 1
 theme_override_fonts/font = ExtResource("1_jp82l")
 theme_override_styles/normal = SubResource("StyleBoxFlat_w0g5m")
 text = "Settings"
@@ -557,6 +730,7 @@ libraries = {
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+focus_mode = 1
 theme_override_fonts/font = ExtResource("1_jp82l")
 theme_override_styles/normal = SubResource("StyleBoxFlat_w0g5m")
 text = "Quit"
@@ -605,6 +779,7 @@ grow_vertical = 2
 [node name="CloseButton" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_mode = 1
 theme_override_fonts/font = ExtResource("1_jp82l")
 theme_override_styles/normal = SubResource("StyleBoxFlat_w0g5m")
 text = "Close"
@@ -613,6 +788,7 @@ metadata/_edit_lock_ = true
 [node name="SaveButton" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_mode = 1
 theme_override_fonts/font = ExtResource("1_jp82l")
 theme_override_styles/normal = SubResource("StyleBoxFlat_w0g5m")
 text = "Save"
@@ -623,12 +799,13 @@ visible = false
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 0
 offset_left = 41.0
-offset_top = 10.0
+offset_top = 13.0
 offset_right = 280.0
 offset_bottom = 144.0
 
 [node name="FullScreen" type="CheckBox" parent="VBoxContainer2"]
 layout_mode = 2
+focus_mode = 1
 theme_override_fonts/font = ExtResource("1_jp82l")
 text = "Fullscreen"
 icon_alignment = 2
@@ -636,12 +813,14 @@ metadata/_edit_lock_ = true
 
 [node name="Vsync" type="CheckBox" parent="VBoxContainer2"]
 layout_mode = 2
+focus_mode = 1
 theme_override_fonts/font = ExtResource("1_jp82l")
 text = "VSync
 "
 
 [node name="ResolutionLabel" type="RichTextLabel" parent="VBoxContainer2"]
 layout_mode = 2
+focus_mode = 1
 theme_override_fonts/normal_font = ExtResource("1_jp82l")
 theme_override_fonts/mono_font = ExtResource("1_jp82l")
 theme_override_fonts/italics_font = ExtResource("1_jp82l")
@@ -654,6 +833,7 @@ vertical_alignment = 1
 
 [node name="ResolutionOption" type="OptionButton" parent="VBoxContainer2"]
 layout_mode = 2
+focus_mode = 1
 theme_override_fonts/font = ExtResource("1_jp82l")
 theme_override_styles/normal = SubResource("StyleBoxFlat_ecvde")
 item_count = 5
@@ -670,6 +850,7 @@ popup/item_4/id = 4
 
 [node name="Button" type="Button" parent="VBoxContainer2"]
 layout_mode = 2
+focus_mode = 1
 theme_override_fonts/font = ExtResource("1_jp82l")
 theme_override_styles/normal = SubResource("StyleBoxFlat_w0g5m")
 text = "Music Settings"
@@ -702,6 +883,7 @@ horizontal_alignment = 1
 
 [node name="MasterVolumeSlider" type="HSlider" parent="VolumesContainer"]
 layout_mode = 2
+focus_mode = 1
 min_value = -30.0
 max_value = 0.0
 
@@ -718,6 +900,7 @@ horizontal_alignment = 1
 
 [node name="EffectsVolumeSlider" type="HSlider" parent="VolumesContainer"]
 layout_mode = 2
+focus_mode = 1
 min_value = -30.0
 max_value = 0.0
 
@@ -735,12 +918,14 @@ offset_right = 84.5
 offset_bottom = 62.5
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 1
 theme_override_fonts/font = ExtResource("1_jp82l")
 theme_override_styles/normal = SubResource("StyleBoxFlat_w0g5m")
 text = "Save and quit
 "
 
 [node name="CloseMainMenu" type="Panel" parent="."]
+visible = false
 layout_mode = 0
 offset_left = -19.0
 offset_top = -62.0
@@ -748,12 +933,26 @@ offset_right = 108.0
 offset_bottom = -45.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_qd36y")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CloseMainMenu"]
+[node name="AnimationPlayer51" type="AnimationPlayer" parent="CloseMainMenu"]
 libraries = {
 &"": SubResource("AnimationLibrary_qhlkt")
 }
 
-[node name="Panel" type="Panel" parent="."]
+[node name="CloseGame" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 95.0
+offset_top = 93.0
+offset_right = 224.0
+offset_bottom = 113.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qd36y")
+
+[node name="AnimationPlayer5" type="AnimationPlayer" parent="CloseGame"]
+libraries = {
+&"": SubResource("AnimationLibrary_s7j2c")
+}
+
+[node name="RamkiXD" type="Panel" parent="."]
 layout_mode = 0
 offset_left = -16.0
 offset_top = -6.0
@@ -761,26 +960,43 @@ offset_right = 335.0
 offset_bottom = 5.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_ugi8i")
 
-[node name="Panel" type="Panel" parent="Panel"]
+[node name="Panel" type="Panel" parent="RamkiXD"]
+layout_mode = 0
 offset_left = -7.0
 offset_top = 182.0
 offset_right = 344.0
 offset_bottom = 193.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_ugi8i")
 
-[node name="Panel2" type="Panel" parent="Panel"]
+[node name="Panel2" type="Panel" parent="RamkiXD"]
+layout_mode = 0
 offset_left = 5.0
 offset_top = -6.0
 offset_right = 19.0
 offset_bottom = 188.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_ugi8i")
 
-[node name="Panel" type="Panel" parent="Panel/Panel2"]
+[node name="Panel" type="Panel" parent="RamkiXD/Panel2"]
+layout_mode = 0
 offset_left = 328.0
 offset_top = 10.0
 offset_right = 334.0
 offset_bottom = 204.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_ugi8i")
+
+[node name="QuitGame" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 97.0
+offset_top = 137.0
+offset_right = 223.0
+offset_bottom = 155.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qd36y")
+
+[node name="AnimationPlayer515" type="AnimationPlayer" parent="QuitGame"]
+libraries = {
+&"": SubResource("AnimationLibrary_8pcie")
+}
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_w0g5m")
@@ -802,6 +1018,9 @@ metadata/_edit_lock_ = true
 [connection signal="pressed" from="VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
 [connection signal="toggled" from="VBoxContainer/NewGame" to="." method="_on_button_toggled"]
 [connection signal="toggled" from="VBoxContainer/NewGame" to="." method="_on_new_game_toggled"]
+[connection signal="animation_finished" from="VBoxContainer/NewGame/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="VBoxContainer/NewGame/AnimationPlayer" to="." method="_on_animation_player_1_animation_finished"]
+[connection signal="pressed" from="VBoxContainer/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="animation_finished" from="SettingsWindow/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
@@ -816,3 +1035,6 @@ metadata/_edit_lock_ = true
 [connection signal="value_changed" from="VolumesContainer/MasterVolumeSlider" to="." method="_on_master_volume_slider_value_changed"]
 [connection signal="value_changed" from="VolumesContainer/EffectsVolumeSlider" to="." method="_on_h_slider_value_changed"]
 [connection signal="pressed" from="SaveAndQuitVolume" to="." method="_on_save_and_quit_volume_pressed"]
+[connection signal="animation_finished" from="CloseMainMenu/AnimationPlayer51" to="." method="_on_animation_player_51_animation_finished"]
+[connection signal="animation_finished" from="QuitGame/AnimationPlayer515" to="." method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="QuitGame/AnimationPlayer515" to="." method="_on_animation_player_515_animation_finished"]

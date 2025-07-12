@@ -10,6 +10,18 @@ func _ready():
 	$VBoxContainer/Settings/AnimationPlayer.play("FadeIn")
 	SaveLoad._saveset()
 	SaveLoad.settings_save.FirstLaunch = true
+	changeres()
+	$VolumesContainer/MasterVolumeSlider.value = SaveLoad.settings_save.MasterVolume
+	$VolumesContainer/EffectsVolumeSlider.value = SaveLoad.settings_save.EfVolume
+	if SaveLoad.settings_save.Vsync == false:
+		$VBoxContainer2/Vsync.button_pressed = false
+	else:
+		$VBoxContainer2/Vsync.button_pressed = true
+func _on_quit_pressed() -> void:
+	$QuitGame.visible = true
+	$QuitGame/AnimationPlayer515.play("Close")
+
+func changeres() -> void:
 	if SaveLoad.settings_save.Fullscreen == true:
 		$VBoxContainer2/FullScreen.button_pressed = true
 	elif SaveLoad.settings_save.Fullscreen == false:
@@ -24,14 +36,7 @@ func _ready():
 		$VBoxContainer2/ResolutionOption.selected = 3
 	elif SaveLoad.settings_save.Resolution == [960, 540]:
 		$VBoxContainer2/ResolutionOption.selected = 4
-	$VolumesContainer/MasterVolumeSlider.value = SaveLoad.settings_save.MasterVolume
-	$VolumesContainer/EffectsVolumeSlider.value = SaveLoad.settings_save.EfVolume
-	if SaveLoad.settings_save.Vsync == false:
-		$VBoxContainer2/Vsync.button_pressed = false
-	else:
-		$VBoxContainer2/Vsync.button_pressed = true
-func _on_quit_pressed() -> void:
-	get_tree().quit()
+
 
 
 func _on_settings_pressed() -> void:
@@ -39,22 +44,24 @@ func _on_settings_pressed() -> void:
 	$SettingsWindow/AnimationPlayer.play("SettOpen")
 	$SettingsWindow.visible = true
 	
+	
 
 
 func _on_animation_player_animation_finished(anim_name: String) -> void:
 	if anim_name == "SettOpen":
 		$HBoxContainer.visible = true
 		$VBoxContainer2.visible = true
+		$VBoxContainer.visible = false
 	if anim_name == "SettClose":
 		$SettingsWindow.visible = false
-		
+	
 
 
 func _on_close_button_pressed() -> void:
 	$SettingsWindow/AnimationPlayer.play("SettClose")
 	$HBoxContainer.visible = false
 	$VBoxContainer2.visible = false
-
+	$VBoxContainer.visible = true
 
 	
 
@@ -64,12 +71,13 @@ func _on_full_screen_toggled(toggled_on: bool) -> void:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 		SaveLoad.settings_save.Fullscreen = toggled_on
 		SaveLoad._saveset()
+		SaveLoad._loadset()
 	elif toggled_on == false:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 		SaveLoad.settings_save.Fullscreen = toggled_on
+		changeres()
 		SaveLoad._saveset()
-	
-
+		SaveLoad._loadset()
 
 func _on_resolution_option_item_selected(index: int) -> void:
 	match index:
@@ -129,4 +137,19 @@ func _on_vsync_toggled(toggled_on: bool) -> void:
 
 func _on_new_game_pressed() -> void:
 	$CloseMainMenu.visible = true
-	$CloseMainMenu/AnimationPlayer.play("closez")
+	$CloseMainMenu/AnimationPlayer51.play("closez")
+
+
+func _on_continue_pressed() -> void:
+	$CloseGame.visible = true
+	$CloseGame/AnimationPlayer5.play("Close")
+
+
+func _on_animation_player_515_animation_finished(anim_name: StringName) -> void:
+	get_tree().quit()
+
+
+
+func _on_animation_player_51_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "closez":
+		get_tree().change_scene_to_file("res://Scenes/Game/MainGame/scene_01_outhome.tscn")
