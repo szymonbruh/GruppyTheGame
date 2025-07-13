@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgpqxx2takmx8"]
+
+[ext_resource type="Script" uid="uid://bck0f1v7e0esu" path="res://Scenes/Game/MainGame/GameManger/game_manager.gd" id="1_in55h"]
+[ext_resource type="FontFile" uid="uid://claty8icuelp2" path="res://Fonts/ModernDOS8x8.ttf" id="1_thjfq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_in55h"]
+bg_color = Color(0, 0, 0, 0.560784)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="GameManager" type="Node"]
+script = ExtResource("1_in55h")
+
+[node name="QuestBox" type="CanvasLayer" parent="."]
+
+[node name="Background" type="Panel" parent="QuestBox"]
+offset_left = 11.0
+offset_top = 33.0
+offset_right = 128.0
+offset_bottom = 91.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_in55h")
+
+[node name="QuestTitle" type="RichTextLabel" parent="QuestBox"]
+offset_left = 15.0
+offset_top = 37.0
+offset_right = 127.0
+offset_bottom = 47.0
+theme_override_fonts/normal_font = ExtResource("1_thjfq")
+text = "test"
+
+[node name="QuestDescription" type="RichTextLabel" parent="QuestBox"]
+offset_left = 15.0
+offset_top = 49.0
+offset_right = 125.0
+offset_bottom = 89.0
+theme_override_colors/default_color = Color(0.542982, 0.542982, 0.542982, 1)
+theme_override_fonts/normal_font = ExtResource("1_thjfq")
+text = "test2"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Gold" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 11.0
+offset_top = 10.0
+offset_right = 190.0
+offset_bottom = 20.0
+theme_override_fonts/normal_font = ExtResource("1_thjfq")
+text = "Money:"

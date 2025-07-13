@@ -14,7 +14,7 @@ var player_start_pozy = 107
 
 
 
-
+var exit_num = null
 
 func run_dialogue(dialogue_string):
 	Dialogic.start(dialogue_string)
@@ -27,5 +27,7 @@ func finish_changescenes():
 		transition_scene = false
 		if current_scene == "scene01_outhome":
 			current_scene = "offroad11"
-		else:
+		if current_scene == "offroad11" and exit_num == 0:
 			current_scene = "scene01_outhome"
+		if current_scene == "offroad11" and exit_num == 1:
+			current_scene = "cat_farm"

@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgvei42e4dk5w"]
+
+[ext_resource type="FontFile" uid="uid://claty8icuelp2" path="res://Fonts/ModernDOS8x8.ttf" id="1_lbsft"]
+
+[sub_resource type="GDScript" id="GDScript_kuu6k"]
+script/source = "extends Label
+
+
+func setDisp():
+	var scene = Global.current_scene
+	if scene == \"scene01_outhome\":
+		text = \"Gruppy's House\"
+	elif scene == \"offroad11\":
+		text = \"Freeside\"
+	elif scene == \"cat_farm\":
+		text = \"Cat Farm\"
+	else:
+		text = \"none\"
+"
+
+[node name="WhatScene" type="Label"]
+offset_left = 11.0
+offset_top = 9.0
+offset_right = 51.0
+offset_bottom = 32.0
+theme_override_fonts/font = ExtResource("1_lbsft")
+script = SubResource("GDScript_kuu6k")

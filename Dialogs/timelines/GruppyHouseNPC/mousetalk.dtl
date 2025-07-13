@@ -12,5 +12,14 @@ mouse: oh... hi
 	I'm here for long time..
 	jump 
 - Exit
-	That's all? Okay....
-	[signal arg="exit_dialog"]
+	Emmmm...
+	I have a quest for you...
+	Can you find my cheese?
+	I would be really happy....
+	- Yes
+		Thank you sir....
+		[signal arg="quest_starting"]
+		[signal arg="exit_dialog"]
+	- No
+		Okay... I get it
+		[signal arg="exit_dialog"]

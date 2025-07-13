@@ -1,0 +1,5 @@
+join mouse center
+Did you found my cheese?
+Yes?.... Thank you so much!
+[signal arg="end_quest"]
+[signal arg="exit_dialog"]

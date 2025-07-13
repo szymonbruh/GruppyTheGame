@@ -1,6 +1,7 @@
 extends Node2D
 
 
+
 func _ready() -> void:
 	$player/Camera2D.limit_top = 0
 	$player/Camera2D.limit_bottom = 320
@@ -10,6 +11,12 @@ func _ready() -> void:
 	Global.current_scene = "scene01_outhome"
 	$CanvasLayer/Panel.visible = true
 	$CanvasLayer/Panel/AnimationPlayer.play("fade_out")
+	Global.exit_num = null
+	if GameSave.found_cheese == 0:
+		$cheese.visible = true
+	else:
+		$cheese.visible = false
+
 
 func _process(float):
 	change_scene()

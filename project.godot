@@ -21,6 +21,7 @@ SaveLoad="*res://Scripts/SaveLoad.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 Global="*res://Scripts/Global.gd"
 GameSave="*res://Scripts/GameSave.gd"
+GameManager="*res://Scenes/Game/MainGame/GameManger/game_manager.tscn"
 
 [dialogic]
 
@@ -29,9 +30,13 @@ directories/dch_directory={
 "slupinformacyjny": "res://Dialogs/characters/slupinformacyjny.dch"
 }
 directories/dtl_directory={
+"CheeseFound": "res://Dialogs/timelines/GruppyHouseNPC/CheeseFound.dtl",
 "FirePlaceInteraction": "res://Dialogs/timelines/Informations/FirePlaceInteraction.dtl",
 "House": "res://Dialogs/timelines/GruppyHouseNPC/House.dtl",
+"MouseQuestEnd": "res://Dialogs/timelines/GruppyHouseNPC/MouseQuestEnd.dtl",
+"endquestMouse": "res://Dialogs/timelines/GruppyHouseNPC/endquestMouse.dtl",
 "informationsGruppyHouse": "res://Dialogs/timelines/Informations/informationsGruppyHouse.dtl",
+"mousedurning quest": "res://Dialogs/timelines/GruppyHouseNPC/mousedurningquest.dtl",
 "mousetalk": "res://Dialogs/timelines/GruppyHouseNPC/mousetalk.dtl",
 "znak1": "res://Dialogs/timelines/offroad11/znak1.dtl",
 "znak2": "res://Dialogs/timelines/offroad11/znak2.dtl",
