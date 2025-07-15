@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://bki4p0hlek4ja"]
+[gd_scene load_steps=51 format=3 uid="uid://bki4p0hlek4ja"]
 
 [ext_resource type="Texture2D" uid="uid://2pjko4sa51de" path="res://Sprites/Game/MainMenu/tilemapbackground1.png" id="1_ng8d6"]
 [ext_resource type="Script" uid="uid://l27mjx4m3dah" path="res://Scenes/Game/MainGame/CatFarm12/cat_farm.gd" id="1_pklrt"]
@@ -15,6 +15,17 @@
 [ext_resource type="Texture2D" uid="uid://c2edhexlpab4i" path="res://Sprites/OS/farmgrass.png" id="10_gatc0"]
 [ext_resource type="Texture2D" uid="uid://7vmi3em8pc0e" path="res://Sprites/OS/wiatrak/wiatrak1.png" id="11_1vhq5"]
 [ext_resource type="PackedScene" uid="uid://blr8ysfghsfbr" path="res://Scenes/Game/MainGame/UI/ShowInfo.tscn" id="11_pklrt"]
+[ext_resource type="Texture2D" uid="uid://bjl67wj6jgdu" path="res://Sprites/OS/wiatrak/farmercat1.png" id="14_n75nq"]
+[ext_resource type="Script" uid="uid://dn6qjqssufxp8" path="res://Scenes/Game/MainGame/CatFarm12/farmer_cat.gd" id="14_v1107"]
+[ext_resource type="Texture2D" uid="uid://cg1ptq6wkhyih" path="res://Sprites/OS/wiatrak/farmercat2.png" id="15_v1107"]
+[ext_resource type="Texture2D" uid="uid://b3h8k6x7h8wq5" path="res://Sprites/OS/wiatrak/farmercat3.png" id="16_hq8we"]
+[ext_resource type="Texture2D" uid="uid://cc05t7ykulhea" path="res://Sprites/OS/wiatrak/farmercat4.png" id="17_08olg"]
+[ext_resource type="Texture2D" uid="uid://gb2sj654m8ak" path="res://Sprites/OS/wiatrak/farmercat5.png" id="18_q7xff"]
+[ext_resource type="Script" uid="uid://ca6mj4r5i466j" path="res://Scenes/Game/MainGame/GameManger/quest.gd" id="20_hq8we"]
+[ext_resource type="Script" uid="uid://8x545hukails" path="res://Scenes/Game/MainGame/CatFarm12/tools.gd" id="21_q7xff"]
+[ext_resource type="Texture2D" uid="uid://bkt7g2aym0eyc" path="res://Sprites/OS/wiatrak/tools.png" id="22_ea0sf"]
+[ext_resource type="Script" uid="uid://bvctkncxij713" path="res://Scenes/Game/MainGame/CatFarm12/seeds.gd" id="23_axwul"]
+[ext_resource type="Texture2D" uid="uid://c83him60jh2jk" path="res://Sprites/OS/wiatrak/seeds.png" id="24_emfru"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wtdys"]
 texture = ExtResource("1_ng8d6")
@@ -254,6 +265,200 @@ sources/10 = SubResource("TileSetAtlasSource_bnicf")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pklrt"]
 size = Vector2(49, 73)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_ea0sf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_v1107")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_hq8we")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_v1107")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_08olg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_q7xff")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_08olg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n75nq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l3ofd"]
+radius = 18.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_axwul"]
+radius = 12.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hsdxu"]
+radius = 14.0
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gatc0"]
 bg_color = Color(0, 0, 0, 1)
 
@@ -352,7 +557,55 @@ position = Vector2(14.5, 23.5)
 shape = SubResource("RectangleShape2D_pklrt")
 metadata/_edit_lock_ = true
 
+[node name="FarmerCat" type="Area2D" parent="." groups=["interaction"]]
+position = Vector2(130, 109)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("14_v1107")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="FarmerCat"]
+sprite_frames = SubResource("SpriteFrames_ea0sf")
+frame_progress = 0.507612
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FarmerCat"]
+shape = SubResource("CircleShape2D_l3ofd")
+
+[node name="FarmQuest1" type="Node2D" parent="FarmerCat"]
+script = ExtResource("20_hq8we")
+quest_name = "Help CatFarmer"
+quest_description = "Go to a field"
+metadata/_custom_type_script = "uid://ca6mj4r5i466j"
+
+[node name="tools" type="Area2D" parent="."]
+position = Vector2(188, 76)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("21_q7xff")
+
+[node name="Sprite2D" type="Sprite2D" parent="tools"]
+texture = ExtResource("22_ea0sf")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tools"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_axwul")
+
+[node name="seeds" type="Area2D" parent="."]
+position = Vector2(80, 108)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("23_axwul")
+
+[node name="Sprite2D" type="Sprite2D" parent="seeds"]
+texture = ExtResource("24_emfru")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="seeds"]
+shape = SubResource("CircleShape2D_hsdxu")
+metadata/_edit_lock_ = true
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="RamkiXD" type="Panel" parent="CanvasLayer"]
 offset_left = -16.0

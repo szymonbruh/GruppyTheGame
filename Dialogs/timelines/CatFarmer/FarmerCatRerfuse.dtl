@@ -1,0 +1,5 @@
+join CatFarmer center
+Oh Gruppy wait
+You already have a quest....
+Sorry, maybe next time
+[signal arg="exit_dialog"]

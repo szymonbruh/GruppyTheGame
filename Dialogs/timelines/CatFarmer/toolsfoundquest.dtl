@@ -1,0 +1,12 @@
+[signal arg="exit_dialog"]
+if {whatquest} != "FarmerQuest1":
+	You have no reason to pick it up
+
+else:
+	You picked up tools!
+
+	[signal arg="pick_tools"]
+
+
+
+[signal arg="exit_dialog"]

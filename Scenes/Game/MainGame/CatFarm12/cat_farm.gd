@@ -10,7 +10,7 @@ func _ready():
 	$player/Camera2D.limit_bottom = 384
 	$player/Camera2D.limit_right = 624
 	$player/Camera2D.limit_left = 0
-	
+	$FarmerCat/AnimatedSprite2D.play("default")
 
 func _process(delta):
 	change_scenes()

@@ -1,0 +1,12 @@
+[signal arg="exit_dialog"]
+if {whatquest} != "FarmerQuest1":
+	You have no reason to pick it up
+
+else:
+	You picked up seeds!
+	
+	[signal arg="seeds_found"]
+
+
+
+[signal arg="exit_dialog"]

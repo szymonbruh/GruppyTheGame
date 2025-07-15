@@ -14,6 +14,8 @@ var player_start_pozy = 107
 
 
 
+
+
 var exit_num = null
 
 func run_dialogue(dialogue_string):

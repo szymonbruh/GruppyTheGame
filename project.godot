@@ -26,18 +26,25 @@ GameManager="*res://Scenes/Game/MainGame/GameManger/game_manager.tscn"
 [dialogic]
 
 directories/dch_directory={
+"CatFarmer": "res://Dialogs/characters/CatFarmer.dch",
 "mouse": "res://Dialogs/characters/mouse.dch",
 "slupinformacyjny": "res://Dialogs/characters/slupinformacyjny.dch"
 }
 directories/dtl_directory={
 "CheeseFound": "res://Dialogs/timelines/GruppyHouseNPC/CheeseFound.dtl",
+"FarmerCatRerfuse": "res://Dialogs/timelines/CatFarmer/FarmerCatRerfuse.dtl",
+"FarmerDurningQuest": "res://Dialogs/timelines/CatFarmer/FarmerDurningQuest.dtl",
 "FirePlaceInteraction": "res://Dialogs/timelines/Informations/FirePlaceInteraction.dtl",
+"FirstMeetCatFarmer": "res://Dialogs/timelines/CatFarmer/FirstMeetCatFarmer.dtl",
 "House": "res://Dialogs/timelines/GruppyHouseNPC/House.dtl",
 "MouseQuestEnd": "res://Dialogs/timelines/GruppyHouseNPC/MouseQuestEnd.dtl",
 "endquestMouse": "res://Dialogs/timelines/GruppyHouseNPC/endquestMouse.dtl",
 "informationsGruppyHouse": "res://Dialogs/timelines/Informations/informationsGruppyHouse.dtl",
 "mousedurning quest": "res://Dialogs/timelines/GruppyHouseNPC/mousedurningquest.dtl",
+"mouserefuse": "res://Dialogs/timelines/GruppyHouseNPC/mouserefuse.dtl",
 "mousetalk": "res://Dialogs/timelines/GruppyHouseNPC/mousetalk.dtl",
+"seedsfoundquesttimeline": "res://Dialogs/timelines/CatFarmer/seedsfoundquesttimeline.dtl",
+"toolsfoundquest": "res://Dialogs/timelines/CatFarmer/toolsfoundquest.dtl",
 "znak1": "res://Dialogs/timelines/offroad11/znak1.dtl",
 "znak2": "res://Dialogs/timelines/offroad11/znak2.dtl",
 "znak3": "res://Dialogs/timelines/offroad11/znak3.dtl"
@@ -48,7 +55,9 @@ layout/style_directory={
 }
 layout/style_list=["res://Dialogs/Styles/Information/infostyle.tres"]
 layout/default_style="res://Dialogs/Styles/Information/infostyle.tres"
-variables={}
+variables={
+"whatquest": "\"\""
+}
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
@@ -142,4 +151,5 @@ dialogic_default_action={
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
 2d/snap/snap_2d_transforms_to_pixel=true
