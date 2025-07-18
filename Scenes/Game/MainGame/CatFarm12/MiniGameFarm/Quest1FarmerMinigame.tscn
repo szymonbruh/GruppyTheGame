@@ -1,0 +1,343 @@
+[gd_scene load_steps=15 format=3 uid="uid://dhlplj3nfx2y1"]
+
+[ext_resource type="PackedScene" uid="uid://dxetpe7v448d1" path="res://Scenes/Game/MainGame/CatFarm12/MiniGameFarm/falling_key.tscn" id="1_qt124"]
+[ext_resource type="Script" uid="uid://cadjyyx0s5rb5" path="res://Scenes/Game/MainGame/CatFarm12/MiniGameFarm/quest_1_farmer_minigame.gd" id="1_s5jpc"]
+[ext_resource type="PackedScene" uid="uid://jupdq4l1bwdu" path="res://Scenes/Game/MainGame/CatFarm12/MiniGameFarm/GameUI.tscn" id="2_j3v60"]
+[ext_resource type="FontFile" uid="uid://claty8icuelp2" path="res://Fonts/ModernDOS8x8.ttf" id="3_bbf58"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s5jpc"]
+bg_color = Color(0, 0, 0, 0.52549)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_onosa"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="Animation" id="Animation_s5jpc"]
+resource_name = "Fade_In"
+length = 0.35
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(102, 185), Vector2(102, 30)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_nl7sl"]
+resource_name = "Fade_Out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.300607),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(102, 30), Vector2(102, 180)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.300607),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_onosa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(102, 185)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nl7sl"]
+_data = {
+&"Fade_In": SubResource("Animation_s5jpc"),
+&"Fade_Out": SubResource("Animation_nl7sl"),
+&"RESET": SubResource("Animation_onosa")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nl7sl"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_vuv56"]
+resource_name = "Fade_Out"
+length = 0.37
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.350146),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.350779),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(19, 20), Vector2(323, 184)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.350779),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(146, 71), Vector2(-1, -2)]
+}
+
+[sub_resource type="Animation" id="Animation_0fr6r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(323, 184)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1, -2)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jw850"]
+_data = {
+&"Fade_Out": SubResource("Animation_vuv56"),
+&"RESET": SubResource("Animation_0fr6r")
+}
+
+[node name="Quest1FarmerMinigame" type="Node2D"]
+script = ExtResource("1_s5jpc")
+
+[node name="FallingKey" parent="." instance=ExtResource("1_qt124")]
+position = Vector2(161, 147)
+frame = 1
+key_name = "Move_S"
+
+[node name="FallingKey2" parent="." instance=ExtResource("1_qt124")]
+position = Vector2(112, 147)
+key_name = "Move_A"
+
+[node name="FallingKey3" parent="." instance=ExtResource("1_qt124")]
+position = Vector2(207, 147)
+frame = 2
+key_name = "Move_D"
+
+[node name="GameUi" parent="." instance=ExtResource("2_j3v60")]
+
+[node name="GameTime" type="Timer" parent="."]
+autostart = true
+
+[node name="GameTimeLabel" type="RichTextLabel" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 148.0
+offset_top = 5.0
+offset_right = 168.0
+offset_bottom = 28.0
+grow_horizontal = 2
+theme_override_fonts/normal_font = ExtResource("3_bbf58")
+text = "60"
+scroll_active = false
+
+[node name="StartGame" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 102.0
+offset_top = 185.0
+offset_right = 218.0
+offset_bottom = 297.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_s5jpc")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="StartGame"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 8.0
+offset_right = 114.0
+offset_bottom = 50.0
+theme_override_fonts/normal_font = ExtResource("3_bbf58")
+bbcode_enabled = true
+text = "[center]Click A, S and D when the rectangles overlap"
+metadata/_edit_lock_ = true
+
+[node name="StartGame" type="Button" parent="StartGame"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 71.0
+offset_right = 84.0
+offset_bottom = 102.0
+theme_override_fonts/font = ExtResource("3_bbf58")
+theme_override_styles/focus = SubResource("StyleBoxFlat_onosa")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_onosa")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_onosa")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_onosa")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_onosa")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_onosa")
+theme_override_styles/hover = SubResource("StyleBoxFlat_onosa")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_onosa")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_onosa")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_onosa")
+theme_override_styles/normal = SubResource("StyleBoxFlat_onosa")
+text = "Start"
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="StartGame"]
+libraries = {
+&"": SubResource("AnimationLibrary_nl7sl")
+}
+
+[node name="EndScreen" type="Panel" parent="."]
+visible = false
+offset_left = -1.0
+offset_top = -2.0
+offset_right = 322.0
+offset_bottom = 182.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_nl7sl")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="EndScreen"]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 58.0
+offset_right = 235.0
+offset_bottom = 140.0
+theme_override_fonts/normal_font = ExtResource("3_bbf58")
+bbcode_enabled = true
+text = "[center]YOUR SCORE IS:
+"
+metadata/_edit_lock_ = true
+
+[node name="Congrats" type="Timer" parent="EndScreen"]
+wait_time = 5.0
+
+[node name="EndScreenAnim" type="AnimationPlayer" parent="EndScreen"]
+libraries = {
+&"": SubResource("AnimationLibrary_jw850")
+}
+
+[connection signal="timeout" from="GameTime" to="." method="_on_game_time_timeout"]
+[connection signal="finished" from="GameTimeLabel" to="FallingKey" method="_on_rich_text_label_finished"]
+[connection signal="pressed" from="StartGame/StartGame" to="." method="_on_start_game_pressed"]
+[connection signal="animation_finished" from="StartGame/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="EndScreen/EndScreenAnim" to="." method="_on_end_screen_anim_animation_finished"]

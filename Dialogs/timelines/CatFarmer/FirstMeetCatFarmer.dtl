@@ -1,33 +1,76 @@
 join CatFarmer center
-Welcome on my farm Gruppy!
+Howdy partner!
 label Cat_farmer_beginning
-What do you want from me today?
-- Do you need help with something?
-	Yea....
-	I'm old cat gruppy, you know
-	Maybe you can help me with sowing seeds?
-	I would be really greatful!
-	- I will do it
-		Thanks!
-		Go find a shovel and seeds
-		When you find it return to me!
-		[signal arg="start_quest_farmer"]
+What are you doing here?
+- I'm looking for some job
+	if {questenabled} == false:
+		Hm.....
+		Yea i have some job for you.
+		You can help me with planting seed's
+		- Okay i will help you!
+			Okay! Go get a shovel and seeds!
+			They are somewhere on farm....
+			When you find it, come back to me
+			[signal arg="start_quest_farmer"]
+			[signal arg="exit_dialog"]
+		- No, i will pass
+			Okay... I get it
+			Come back when you change your mind!
+			[signal arg="exit_dialog"]
+	else:
+		Sorry, you have a quest already...
+		Maybe return later!
 		[signal arg="exit_dialog"]
-	- I can't do it right now
-		Okay i get it.
-		[signal arg="exit_dialog"]
-- What are you doing there?
-	Me? Nothing new....
-	I'm gonna harvest some plant's today
-	Another boring day on farm..
-	But i hear some rumours about a Fisherman Cat
-	- What did you heard?
-		I heard about his relationship with this dirty Biznesman cat
-		He sold himself to him
-		Made some sort of shady deal?
-		They want to kick me out of my farm Gruppy
-		But i will not give up this easy
+- Tell me about Town
+	label towntelling
+	What do you want to know?
+	- Tell me about how economy works
+		Em...
+		There are 3 significant sources of income for the town
+		Farm, managed by me
+		Fishes, managed by Fisherman cat
+		And the mines, managed by Miner cat
+		Now the economy is in balance
+		You know what i mean, nobody manages all of incomes
+		But this is where the Businessman cat comes into play
+		He want to have it all for himself
+		Why? I'm not sure
+		He wanted me to sell the  farm to him!
+		Of course i refused  but...
+		I heard that the Fisherman cat did some kind of...
+		I'm not sure....
+		Some kind of shady deal
+		The result of this deal is the return of the income from fish to the Business cat
+		It's weird but...
+		Em....
+		You know...
+		I'm not sure what the Businessman cat really wants
+		He is a dirty type of guy
+		You know, he will say some great stuff to you
+		And you don't even notice and suddenly you have some strange business signed
+		I have a bad feeling about this
+		jump towntelling
+	- Tell me about other cats
+		You know... I'm living on the farm
+		I don't know many cats
+		I know a Fisherman Cat
+		He is my brother...
+		But some years ago...
+		Our relation has been destroyed...
+		....
+		Well....
+		Happends, right?
+		I speak sometimes with a Miner cat
+		But
+		He is a strange one.....
+		You will see but....
+		Yea you know
+		I know a Business cat
+		Better be careful with him....
+		That's all what i can say
+		jump towntelling
+	- Exit
 		jump Cat_farmer_beginning
 - Exit
-	Okay okay
+	Okey partner, see you later!
 	[signal arg="exit_dialog"]

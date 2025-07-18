@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ds4thfbu7bys1"]
+
+[ext_resource type="Script" uid="uid://isekpsyg8wfv" path="res://Scenes/Game/MainGame/CatFarm12/MiniGameFarm/signals.gd" id="1_akpow"]
+
+[node name="Signals" type="Node2D"]
+script = ExtResource("1_akpow")

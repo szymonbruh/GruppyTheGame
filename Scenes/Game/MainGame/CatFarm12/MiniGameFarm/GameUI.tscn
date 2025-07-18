@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://jupdq4l1bwdu"]
+
+[ext_resource type="Script" uid="uid://b35vcjpwx4r8x" path="res://Scenes/Game/MainGame/CatFarm12/MiniGameFarm/game_ui.gd" id="1_8ouej"]
+[ext_resource type="FontFile" uid="uid://claty8icuelp2" path="res://Fonts/ModernDOS8x8.ttf" id="1_vr76o"]
+
+[node name="GameUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8ouej")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ScoreLabel" type="RichTextLabel" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 71.0
+offset_bottom = 16.0
+theme_override_fonts/normal_font = ExtResource("1_vr76o")
+text = "1000pts"

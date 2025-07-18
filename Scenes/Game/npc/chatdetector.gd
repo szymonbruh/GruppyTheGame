@@ -41,7 +41,7 @@ func DialogicSignal(arg: String):
 			Global.run_dialogue("mouserefuse")
 	if arg == "end_quest":
 		$CheeseQuest.finish_quest()
-		Global.is_quest_enabled = false
+		GameSave.is_quest_enabled = false
 		GameSave.quest1mouse = 2
 func _ready():
 	Dialogic.signal_event.connect(DialogicSignal)

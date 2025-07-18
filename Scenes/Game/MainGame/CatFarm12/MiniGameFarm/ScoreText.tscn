@@ -1,0 +1,92 @@
+[gd_scene load_steps=6 format=3 uid="uid://cslk7gwgpf7de"]
+
+[ext_resource type="FontFile" uid="uid://5uqvq032xj5o" path="res://Fonts/SuperPixel-m2L8j.ttf" id="1_i080n"]
+[ext_resource type="Script" uid="uid://c6eecmf8hdiwe" path="res://Scenes/Game/MainGame/CatFarm12/MiniGameFarm/score_text.gd" id="1_u46hh"]
+
+[sub_resource type="Animation" id="Animation_i080n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RichTextLabel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-56, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_vaepj"]
+resource_name = "fade_out"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RichTextLabel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.198367),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-56, 1), Vector2(-56, 13)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u46hh"]
+_data = {
+&"RESET": SubResource("Animation_i080n"),
+&"fade_out": SubResource("Animation_vaepj")
+}
+
+[node name="ScoreText" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u46hh")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = -56.0
+offset_top = 1.0
+offset_right = 56.0
+offset_bottom = 21.0
+theme_override_colors/default_color = Color(0.799735, 0, 0.15942, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/normal_font = ExtResource("1_i080n")
+bbcode_enabled = true
+text = "[center]Perfect"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_u46hh")
+}
+autoplay = "fade_out"

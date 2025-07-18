@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxetpe7v448d1"]
+
+[ext_resource type="Texture2D" uid="uid://dqe0yptum20lq" path="res://Scenes/Game/MainGame/CatFarm12/MiniGameFarm/sprites.png" id="1_2ipry"]
+[ext_resource type="Script" uid="uid://0objbohh5n2h" path="res://Scenes/Game/MainGame/CatFarm12/MiniGameFarm/falling_key.gd" id="2_t514e"]
+
+[node name="FallingKey" type="Sprite2D"]
+position = Vector2(154, 150)
+texture = ExtResource("1_2ipry")
+hframes = 3
+vframes = 3
+script = ExtResource("2_t514e")
+
+[node name="RandomSpawnTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="RandomSpawnTimer" to="." method="_on_random_spawn_timer_timeout"]

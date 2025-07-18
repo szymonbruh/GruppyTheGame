@@ -8,13 +8,16 @@ func _process(delta: float) -> void:
 
 
 func interact():
+	Dialogic.VAR.set("questenabled", GameSave.is_quest_enabled)
 	if GameSave.done_farmer_quest == false:
 		Global.player.is_moving = false
 		if GameSave.farmer_quest == 0:
 				if GameSave.current_quest == 0:
 					Global.run_dialogue("FirstMeetCatFarmer")
-				if GameSave.current_quest == 1 or GameSave.current_quest == 2 or GameSave.current_quest == 3:
+				if GameSave.current_quest == 1 or GameSave.current_quest == 2:
 					Global.run_dialogue("FarmerDurningQuest")
+				if GameSave.current_quest == 3:
+					print("dzial")
 		if GameSave.farmer_quest == 1:
 			print("quest2")
 	else:
